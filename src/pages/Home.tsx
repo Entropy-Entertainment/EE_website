@@ -39,6 +39,10 @@ export const Home = () => {
                 {
                     getHighlightedProjects()
                 }
+                <div className={`${generic.container} ${generic.secondary} ${generic.w100}`}>
+                    <h1>Wie zijn wij?</h1>
+                    <p>Entropy Entertainment is een team van 3 studenten die gepassioneerd zijn in game en software development</p>
+                </div>
                 {
                     getLatestPosts(3)
                 }
