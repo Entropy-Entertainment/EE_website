@@ -28,7 +28,7 @@
         },
         {
           "type": 2,
-          "content": "./src/assets/img/EE_logo.webp"
+          "content": "./public/img/EE_logo.webp"
         }
       ]
     }
