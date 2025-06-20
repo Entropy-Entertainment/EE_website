@@ -17,7 +17,7 @@ export const Routing = () => {
                 <Route path={"*"} element={<NotFound />} />
                 <Route path={"/"} element={<Home/>}/>
                 <Route path={"/projects"} element={<Projects/>}/>
-                <Route path={"/json"} element={<Posts/>}/>
+                <Route path={"/posts"} element={<Posts/>}/>
                 <Route path={"/about"} element={<About/>}/>
             </Routes>
 
