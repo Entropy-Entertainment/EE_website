@@ -1,0 +1,36 @@
+{
+  "projects": {
+    "games": [
+
+    ],
+    "software": [
+
+    ]
+  },
+  "posts": [
+    {
+      "id": 1,
+      "author": "<null/>",
+      "title": "Test Post",
+      "banner": "./public/img/EE_logo.webp",
+      "content": [
+        {
+          "type": 1,
+          "content": "Dit is een test post"
+        },
+        {
+          "type": 0,
+          "content": "Waarom?"
+        },
+        {
+          "type": 1,
+          "content": "Omdat ik moet testen of dit werkt :)"
+        },
+        {
+          "type": 2,
+          "content": "./src/assets/img/EE_logo.webp"
+        }
+      ]
+    }
+  ]
+}
