@@ -1,6 +1,6 @@
 import home from "#/pages/home.module.css";
 import generic from "#/generic.module.css";
-import posts from "$/posts/posts.json";
+import posts from "../../public/posts/posts.json";
 import {getHTMLforDisplayPost} from "@/components/PostService";
 import type {JSX} from "react/jsx-runtime";
 import type {Post} from "@/types/Post.ts";

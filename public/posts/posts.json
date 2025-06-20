@@ -12,7 +12,7 @@
       "id": 1,
       "author": "<null/>",
       "title": "Test Post",
-      "banner": "./src/assets/img/EE_logo.webp",
+      "banner": "./public/img/EE_logo.webp",
       "content": [
         {
           "type": 1,

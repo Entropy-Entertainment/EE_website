@@ -10,7 +10,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, "./src"),
       '#': path.resolve(__dirname, "./src/assets/css"),
       '$': path.resolve(__dirname, "./src/assets"),
-      '&': path.resolve(__dirname, ",.src/assets/img")
+      '&': path.resolve(__dirname, "./public/")
     }
   },
   base: "/"
