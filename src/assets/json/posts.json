@@ -9,10 +9,10 @@
   },
   "posts": [
     {
-      "id": 1,
+      "id": 3,
       "author": "<null/>",
       "title": "Test Post",
-      "banner": "/img/EE_logo.webp",
+      "banner": "./src/assets/img/EE_logo.webp",
       "content": [
         {
           "type": 1,
@@ -28,7 +28,7 @@
         },
         {
           "type": 2,
-          "content": "/img/EE_logo.webp"
+          "content": "./src/assets/img/EE_logo.webp"
         }
       ]
     }

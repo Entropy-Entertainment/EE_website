@@ -1,6 +1,6 @@
 import generic from "#/generic.module.css";
 import header from "#/components/header.module.css";
-import logo from "../../public/img/EE_logo.webp";
+import logo from "$/img/EE_logo.webp";
 import {useNavigate} from "react-router";
 
 export const Header = () => {

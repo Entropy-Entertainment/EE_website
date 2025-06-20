@@ -1,6 +1,7 @@
 .post {
     display: inline-flex;
     flex-wrap: wrap;
+    padding-bottom: 1rem;
 }
 
 .post div {
