@@ -12,5 +12,6 @@ export default defineConfig({
       '$': path.resolve(__dirname, "./src/assets"),
       '&': path.resolve(__dirname, ",.src/assets/img")
     }
-  }
+  },
+  base: "/"
 })
