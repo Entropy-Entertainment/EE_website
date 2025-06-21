@@ -18,13 +18,13 @@ export const Home = () => {
         return aggrigatedPosts;
     }
 
-    const getHighlightedProjects = () => {
-        const aggrigatedProjects: JSX.Element[] = [];
-        posts.projects.games.forEach((game: Post) => {
-            if (game.highlighted)
-                aggrigatedProjects.push(getHTMLforDisplayPost(game));
-        })
-        return aggrigatedProjects;
+    const getHighlightedProjects = (): JSX.Element[] => {
+        const combinedProjects = [...posts.projects.games, ...posts.projects.software];
+
+        return combinedProjects
+            .filter((project: Post) => project.highlightedPos !== undefined)
+            .sort((a: Post, b: Post) => a.highlightedPos! - b.highlightedPos!)
+            .map(getHTMLforDisplayPost);
     };
 
     return (
@@ -41,7 +41,8 @@ export const Home = () => {
                 }
                 <div className={`${generic.container} ${generic.secondary} ${generic.w100}`}>
                     <h1>Wie zijn wij?</h1>
-                    <p>Entropy Entertainment is een team van 3 studenten die gepassioneerd zijn in game en software development</p>
+                    <p>Entropy Entertainment is een team van 3 studenten die gepassioneerd zijn in game en software
+                        development</p>
                 </div>
                 {
                     getLatestPosts(3)
