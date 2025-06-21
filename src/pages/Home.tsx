@@ -1,7 +1,8 @@
 import home from "#/pages/home.module.css";
 import generic from "#/generic.module.css";
+import post from "#/components/post.module.css";
 import posts from "$/json/posts.json";
-import {getHTMLforDisplayPost} from "@/components/PostService";
+import {getHTMLforDisplayPost, getHTMLforDisplayProject} from "@/components/PostService";
 import type {JSX} from "react/jsx-runtime";
 import type {Post} from "@/types/Post.ts";
 
@@ -24,7 +25,7 @@ export const Home = () => {
         return combinedProjects
             .filter((project: Post) => project.highlightedPos !== undefined)
             .sort((a: Post, b: Post) => a.highlightedPos! - b.highlightedPos!)
-            .map(getHTMLforDisplayPost);
+            .map(getHTMLforDisplayProject);
     };
 
     return (
@@ -36,17 +37,31 @@ export const Home = () => {
                         <h2 className={`${generic.wmin} ${generic.nowrap}`}>We make games and software</h2>
                     </span>
                 </div>
+                <h1>
+                    Projecten
+                </h1>
                 {
                     getHighlightedProjects()
                 }
+
+                <h1>
+                    Over ons
+                </h1>
+
                 <div className={`${generic.container} ${generic.secondary} ${generic.w100}`}>
                     <h1>Wie zijn wij?</h1>
                     <p>Entropy Entertainment is een team van 3 studenten die gepassioneerd zijn in game en software
                         development</p>
                 </div>
                 {
-                    getLatestPosts(3)
+                    posts.posts.length > 0 &&
+                    <h1>Posts</h1>
                 }
+                <div className={`${post.postgrid}`}>
+                    {
+                        getLatestPosts(3)
+                    }
+                </div>
             </div>
         </>
     )

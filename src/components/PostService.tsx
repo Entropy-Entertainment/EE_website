@@ -10,6 +10,29 @@ function goToArticle(postJson: Post) {
 export function getHTMLforDisplayPost(postJson: Post) {
     return (
         <div key={postJson.id} className={`${generic.container} ${generic.primary} ${generic.w100} ${post.post}`}>
+            <div>
+                <h1>
+                    {postJson.title}
+                </h1>
+                {postJson.author &&
+                    <h5>
+                        Geschreven door: {postJson.author}
+                    </h5>
+                }
+
+                {(() => {
+                    const firstParagraph = postJson.content.find(item => item.type === ContentType.paragraph);
+                    return firstParagraph ? <p className={`${generic.w100}`}>{firstParagraph.content}</p> : null;
+                })()}
+            </div>
+            <button className={`${post.postButton}`} onClick={() => goToArticle(postJson)}>read more</button>
+        </div>
+    )
+}
+
+export function getHTMLforDisplayProject(postJson: Post) {
+    return (
+        <div key={postJson.id} className={`${generic.container} ${generic.primary} ${generic.w100} ${post.project}`}>
             <img className={`${generic.w50}`} alt={postJson.banner} src={postJson.banner}/>
             <div>
                 <h1>
@@ -17,7 +40,7 @@ export function getHTMLforDisplayPost(postJson: Post) {
                 </h1>
                 {postJson.author &&
                     <h5>
-                        written by: {postJson.author}
+                        Geschreven door: {postJson.author}
                     </h5>
                 }
 
@@ -26,7 +49,7 @@ export function getHTMLforDisplayPost(postJson: Post) {
                     return firstParagraph ? <p>{firstParagraph.content}</p> : null;
                 })()}
             </div>
-            <button className={`${post.postButton}`} onClick={() => goToArticle(postJson)}>read more</button>
+            <button className={`${post.projectButton}`} onClick={() => goToArticle(postJson)}>read more</button>
         </div>
     )
 }

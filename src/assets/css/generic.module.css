@@ -48,6 +48,7 @@
 
 .wrapper {
     padding: 0 15rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 1078px) {

@@ -1,10 +1,23 @@
-.post {
-    display: inline-flex;
-    flex-wrap: wrap;
+.postgrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0 1rem;
 }
 
-.post div {
-    flex: 1 0 50%;
+@media (max-width: 1078px) {
+    .postgrid {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 680px) {
+    .postgrid {
+        grid-template-columns: auto;
+    }
+}
+
+.postgrid .post {
+    padding: 1rem;
 }
 
 .postButton {
@@ -13,7 +26,7 @@
     border: 1px solid rgba(var(--primary), 0.8);
     border-radius: 0.5rem;
     padding: 0.3rem 0.5rem;
-    margin-left: auto;
+    float: right;
 }
 
 .postButton:hover {
@@ -22,5 +35,37 @@
 }
 
 .postButton:active {
+    border: 1px inset rgba(var(--primary), 0.5);
+}
+
+
+.project {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.project div {
+    flex: 1 0 75%;
+}
+
+.project img {
+    flex: 1 0 25%;
+}
+
+.projectButton {
+    font-size: 1rem;
+    background-color: rgba(var(--primary), 0.5);
+    border: 1px solid rgba(var(--primary), 0.8);
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    margin-left: auto;
+}
+
+.projectButton:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.projectButton:active {
     border: 1px inset rgba(var(--primary), 0.5);
 }
