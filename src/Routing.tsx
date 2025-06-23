@@ -6,6 +6,7 @@ import {Projects} from "@/pages/Projects.tsx";
 import {Posts} from "@/pages/Posts.tsx";
 import {About} from "@/pages/About.tsx";
 import {NotFound} from "@/pages/NotFound.tsx";
+import {RenderedPost} from "@/pages/RenderedPost.tsx";
 
 export const Routing = () => {
 
@@ -14,11 +15,12 @@ export const Routing = () => {
             <Header/>
 
             <Routes>
-                <Route path={"*"} element={<NotFound />} />
                 <Route path={"/"} element={<Home/>}/>
                 <Route path={"/projects"} element={<Projects/>}/>
                 <Route path={"/posts"} element={<Posts/>}/>
                 <Route path={"/about"} element={<About/>}/>
+                <Route path={"/post"} element={<RenderedPost />}/>
+                <Route path={"*"} element={<NotFound />} />
             </Routes>
 
             <Footer/>

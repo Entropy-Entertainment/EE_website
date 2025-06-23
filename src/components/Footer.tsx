@@ -18,6 +18,7 @@ export const Footer = () => {
                     <div className={`${footer.item}`}>
                         <h4>Contact</h4>
                         <a href={'mailto:support@entropyentertainment.net?subject=Greetings%20from%20EE'}>support@entropyentertainment.net</a>
+                        <a href={'https://github.com/Entropy-Entertainment'} target={"_blank"}>Github</a>
                     </div>
                 </div>
                 <div className={`${footer.wrapper} ${generic.w100}`}>

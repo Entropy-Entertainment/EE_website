@@ -13,5 +13,13 @@ export default defineConfig({
       '&': path.resolve(__dirname, "./src/assets/img")
     }
   },
+  build: {
+    target: "es2019",
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      }
+    }
+  },
   base: "/"
 })

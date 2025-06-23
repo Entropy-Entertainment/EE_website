@@ -4,6 +4,10 @@
     gap: 0 1rem;
 }
 
+.postgrid:has(:only-child) {
+    grid-template-columns: auto;
+}
+
 @media (max-width: 1078px) {
     .postgrid {
         grid-template-columns: auto auto;
@@ -18,6 +22,10 @@
 
 .postgrid .post {
     padding: 1rem;
+}
+
+.post p + p {
+    margin-top: 0.5rem;
 }
 
 .postButton {
@@ -38,6 +46,13 @@
     border: 1px inset rgba(var(--primary), 0.5);
 }
 
+.nonefound {
+    padding: 5rem 0 15rem;
+}
+
+.nonefound * {
+    padding: 0.25rem;
+}
 
 .project {
     display: inline-flex;
@@ -68,4 +83,20 @@
 
 .projectButton:active {
     border: 1px inset rgba(var(--primary), 0.5);
+}
+
+.noBanner {
+    display: flex;
+    flex-direction: column;
+}
+
+.noBanner div {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.project img {
+    flex: 1 0 25%;
+    max-width: 100%;
+    object-fit: cover;
 }

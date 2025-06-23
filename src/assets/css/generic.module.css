@@ -34,6 +34,10 @@
     width: 100% !important;
 }
 
+.mw100 {
+    max-width: 100% !important;
+}
+
 .w50 {
     width: 50% !important;
 }

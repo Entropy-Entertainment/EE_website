@@ -2,9 +2,10 @@ import home from "#/pages/home.module.css";
 import generic from "#/generic.module.css";
 import post from "#/components/post.module.css";
 import posts from "$/json/posts.json";
-import {getHTMLforDisplayPost, getHTMLforDisplayProject} from "@/components/PostService";
+import {getHTMLforDisplayPost, getHTMLforDisplayProject, getHTMLforPost} from "@/components/PostService";
 import type {JSX} from "react/jsx-runtime";
 import type {Post} from "@/types/Post.ts";
+import {Helmet} from "react-helmet";
 
 export const Home = () => {
     const getLatestPosts = (limit: number) => {
@@ -21,6 +22,10 @@ export const Home = () => {
 
     const getHighlightedProjects = (): JSX.Element[] => {
         const combinedProjects = [...posts.projects.games, ...posts.projects.software];
+        console.log('Combined projects:', combinedProjects);
+
+        const highlighted = combinedProjects.filter(p => p.highlightedPos !== undefined);
+        console.log('Highlighted projects:', highlighted);
 
         return combinedProjects
             .filter((project: Post) => project.highlightedPos !== undefined)
@@ -28,31 +33,39 @@ export const Home = () => {
             .map(getHTMLforDisplayProject);
     };
 
+    function projectsAvailable() {
+        return posts.projects.software.length > 0 || posts.projects.games.length > 0;
+    }
+
     return (
         <>
+            <Helmet>
+                <title>Home - Entropy Entertainment</title>
+                <meta name="description"
+                      content="Welcome to Entropy Entertainment, an indie dev studio making fun games and usefull software and tooling"/>
+                <meta name="robots" content="index, follow"/>
+            </Helmet>
+
             <div className={`${generic.wrapper}`}>
                 <div className={`${home.banner} ${generic.w100}`}>
                     <span>
                         <h1 className={`${home.fancytext} ${generic.wmin} ${generic.nowrap}`}>Entropy Entertainment</h1>
-                        <h2 className={`${generic.wmin} ${generic.nowrap}`}>We make games and software</h2>
+                        <h2 className={`${generic.wmin} ${generic.nowrap}`}>Wij maken games en software</h2>
                     </span>
                 </div>
-                <h1>
-                    Projecten
-                </h1>
+                {projectsAvailable() &&
+                    <h1>
+                        Projecten
+                    </h1>
+                }
                 {
                     getHighlightedProjects()
+
+                }
+                {
+                    getHTMLforPost(posts.about.aboutus)
                 }
 
-                <h1>
-                    Over ons
-                </h1>
-
-                <div className={`${generic.container} ${generic.secondary} ${generic.w100}`}>
-                    <h1>Wie zijn wij?</h1>
-                    <p>Entropy Entertainment is een team van 3 studenten die gepassioneerd zijn in game en software
-                        development</p>
-                </div>
                 {
                     posts.posts.length > 0 &&
                     <h1>Posts</h1>
