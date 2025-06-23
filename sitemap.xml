@@ -3,14 +3,26 @@
 
   <url>
     <loc>https://entropyentertainment.net/</loc>
-  </url>
-  <url>
-    <loc>https://entropyentertainment.net/about</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
   </url>
   <url>
     <loc>https://entropyentertainment.net/projects</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://entropyentertainment.net/about</loc>
+    <lastmod>2025-06-20</lastmod>
+    
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://entropyentertainment.net/posts</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

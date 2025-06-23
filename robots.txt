@@ -1,0 +1,6 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Point to your sitemap
+Sitemap: https://entropyentertainment.net/sitemap.xml
