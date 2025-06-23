@@ -22,10 +22,6 @@ export const Home = () => {
 
     const getHighlightedProjects = (): JSX.Element[] => {
         const combinedProjects = [...posts.projects.games, ...posts.projects.software];
-        console.log('Combined projects:', combinedProjects);
-
-        const highlighted = combinedProjects.filter(p => p.highlightedPos !== undefined);
-        console.log('Highlighted projects:', highlighted);
 
         return combinedProjects
             .filter((project: Post) => project.highlightedPos !== undefined)
