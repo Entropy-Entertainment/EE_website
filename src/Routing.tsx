@@ -1,12 +1,14 @@
 import {Route, Routes} from "react-router";
-import {Footer} from "./components/Footer.tsx";
-import {Header} from "./components/Header.tsx";
-import {Home} from "@/pages/Home.tsx";
-import {Projects} from "@/pages/Projects.tsx";
-import {Posts} from "@/pages/Posts.tsx";
-import {About} from "@/pages/About.tsx";
-import {NotFound} from "@/pages/NotFound.tsx";
-import {RenderedPost} from "@/pages/RenderedPost.tsx";
+import * as React from "react";
+
+const Header = React.lazy(() => import("@/components/Header.tsx"));
+const Footer = React.lazy(() => import("@/components/Footer.tsx"));
+const Home = React.lazy(() => import("@/pages/Home.tsx"));
+const Projects = React.lazy(() => import("@/pages/Projects.tsx"));
+const Posts = React.lazy(() => import("@/pages/Posts.tsx"));
+const About = React.lazy(() => import("@/pages/About.tsx"));
+const RenderedPost = React.lazy(() => import("@/pages/RenderedPost.tsx"));
+const NotFound = React.lazy(() => import("@/pages/NotFound.tsx"));
 
 export const Routing = () => {
 
@@ -19,8 +21,8 @@ export const Routing = () => {
                 <Route path={"/projects"} element={<Projects/>}/>
                 <Route path={"/posts"} element={<Posts/>}/>
                 <Route path={"/about"} element={<About/>}/>
-                <Route path={"/post"} element={<RenderedPost />}/>
-                <Route path={"*"} element={<NotFound />} />
+                <Route path={"/post"} element={<RenderedPost/>}/>
+                <Route path={"*"} element={<NotFound/>}/>
             </Routes>
 
             <Footer/>

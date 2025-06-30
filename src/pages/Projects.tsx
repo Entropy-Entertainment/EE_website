@@ -5,7 +5,7 @@ import type {Post} from "@/types/Post.ts";
 import {getHTMLforDisplayPost} from "@/components/PostService.tsx";
 import {Helmet} from "react-helmet";
 
-export const Projects = () => {
+export default function Projects() {
     return (
         <>
             <Helmet>

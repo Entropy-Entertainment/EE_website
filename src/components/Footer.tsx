@@ -2,7 +2,7 @@ import generic from "#/generic.module.css";
 import footer from "#/components/footer.module.css";
 import {useNavigate} from "react-router";
 
-export const Footer = () => {
+export default function Footer() {
     const navigate = useNavigate();
     return (
         <footer>

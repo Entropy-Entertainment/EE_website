@@ -7,7 +7,7 @@ import type {JSX} from "react/jsx-runtime";
 import type {Post} from "@/types/Post.ts";
 import {Helmet} from "react-helmet";
 
-export const Home = () => {
+export default function Home() {
     const getLatestPosts = (limit: number) => {
         let postCount = 0;
         const aggrigatedPosts: JSX.Element[] = [];

@@ -4,7 +4,7 @@ import {getHTMLforPost} from "@/components/PostService.tsx";
 import {useLocation} from "react-router";
 import type {Post} from "@/types/Post.ts";
 
-export const RenderedPost = () => {
+export default function RenderedPost() {
     const location = useLocation();
     const post: Post = location.state;
 

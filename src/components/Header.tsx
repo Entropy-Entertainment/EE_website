@@ -3,7 +3,7 @@ import header from "#/components/header.module.css";
 import logo from "$/img/EE_logo_128x128.webp";
 import {useNavigate} from "react-router";
 
-export const Header = () => {
+export default function Header() {
     const navigate = useNavigate();
     return (
         <header>

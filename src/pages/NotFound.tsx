@@ -2,7 +2,7 @@ import generic from "#/generic.module.css";
 import {useNavigate} from "react-router";
 import {Helmet} from "react-helmet";
 
-export const NotFound = () => {
+export default function NotFound(){
     const navigate = useNavigate();
     return(
         <>

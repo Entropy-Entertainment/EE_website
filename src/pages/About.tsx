@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import {getHTMLforPost} from "@/components/PostService.tsx";
 import posts from "$/json/posts.json";
 
-export const About = () => {
+export default function About() {
     return (
         <>
             <Helmet>
