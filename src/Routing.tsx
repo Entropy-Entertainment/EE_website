@@ -1,14 +1,12 @@
 import {Route, Routes} from "react-router";
-import * as React from "react";
-
-const Header = React.lazy(() => import("@/components/Header.tsx"));
-const Footer = React.lazy(() => import("@/components/Footer.tsx"));
-const Home = React.lazy(() => import("@/pages/Home.tsx"));
-const Projects = React.lazy(() => import("@/pages/Projects.tsx"));
-const Posts = React.lazy(() => import("@/pages/Posts.tsx"));
-const About = React.lazy(() => import("@/pages/About.tsx"));
-const RenderedPost = React.lazy(() => import("@/pages/RenderedPost.tsx"));
-const NotFound = React.lazy(() => import("@/pages/NotFound.tsx"));
+import Home from "@/pages/Home.tsx";
+import Projects from "@/pages/Projects.tsx";
+import Posts from "@/pages/Posts.tsx";
+import Footer from "@/components/Footer.tsx";
+import NotFound from "@/pages/NotFound.tsx";
+import RenderedPost from "@/pages/RenderedPost.tsx";
+import About from "@/pages/About.tsx";
+import Header from "@/components/Header.tsx";
 
 export const Routing = () => {
 
