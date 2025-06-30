@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const baseUrl = 'https://entropyentertainment.net/#';
+const baseUrl = 'https://entropyentertainment.net';
 
 const routes = [
     {path: '/', lastmod: '2025-06-21', changefreq: 'monthly', priority: 1.0},
