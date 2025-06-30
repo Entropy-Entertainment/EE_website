@@ -1,7 +1,7 @@
 import {StrictMode, useEffect} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
-import {HashRouter, useNavigate} from "react-router";
+import {BrowserRouter, useNavigate} from "react-router";
 import {Routing} from "@/Routing.tsx";
 
 export function RedirectHandler() {
@@ -19,9 +19,9 @@ export function RedirectHandler() {
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <HashRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <RedirectHandler />
             <Routing />
-        </HashRouter>
+        </BrowserRouter>
     </StrictMode>,
 )
