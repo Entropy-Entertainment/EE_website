@@ -1,0 +1,18 @@
+---
+import logo from "../assets/img/EE_logo_128x128.webp";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header>
+    <div>
+        <img src={logo.src} alt={"Entropy Entertainment"}/>
+        <h2>Entropy Entertainment</h2>
+    </div>
+        
+    <div>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/projects">Projects</HeaderLink>
+        <HeaderLink href="/posts">Posts</HeaderLink>
+        <HeaderLink href="/About">About</HeaderLink>
+    </div>
+</header>

@@ -1,17 +1,10 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
+  "extends": "astro/tsconfigs/base",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+
   "compilerOptions": {
-    "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types"],
-    "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["src/assets/css/*"],
-      "$/*": ["src/assets/*"],
-      "&/*": ["src/assets/img/*"]
-    }
+    "strictNullChecks": true,
+    "allowJs": true
   }
 }
