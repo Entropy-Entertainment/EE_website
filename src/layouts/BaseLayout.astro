@@ -16,10 +16,16 @@ const {
 	 	<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script>
+			const saved = localStorage.getItem("theme");
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			const theme = saved || (prefersDark ? "dark" : "light");
+			document.documentElement.dataset.theme = theme;
+		</script>
 	</head>
 	<body>
 		<Header/>
 		<slot />
 		<Footer/>
 	</body>
-</html>
+</html

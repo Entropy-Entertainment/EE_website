@@ -15,4 +15,22 @@ import HeaderLink from "./HeaderLink.astro";
         <HeaderLink href="/posts">Posts</HeaderLink>
         <HeaderLink href="/About">About</HeaderLink>
     </div>
+
+    <div>
+        <button id="theme-toggle">test</button>
+    </div>
+
+    <script is:inline>
+        const button = document.getElementById("theme-toggle");
+
+        function switchTheme() {
+            const root = document.documentElement;
+            const newTheme = root.dataset.theme === "dark" ? "light" : "dark";
+
+            root.dataset.theme = newTheme;
+            localStorage.setItem("theme", newTheme);
+        }
+
+        button.addEventListener("click", switchTheme);
+    </script>
 </header>
