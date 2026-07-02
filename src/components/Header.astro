@@ -4,33 +4,95 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
-    <div>
-        <img src={logo.src} alt={"Entropy Entertainment"}/>
-        <h2>Entropy Entertainment</h2>
-    </div>
-        
-    <div>
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/projects">Projects</HeaderLink>
-        <HeaderLink href="/posts">Posts</HeaderLink>
-        <HeaderLink href="/About">About</HeaderLink>
-    </div>
+    <nav>
+        <a class="left" href="/">
+            <img src={logo.src} alt={"Entropy Entertainment"}/> 
+            <h2>Entropy Entertainment</h2>
+        </a>
+            
+        <div class="center">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/projects">Projects</HeaderLink>
+            <HeaderLink href="/posts">Posts</HeaderLink>
+            <HeaderLink href="/About">About</HeaderLink>
+        </div>
 
-    <div>
-        <button id="theme-toggle">test</button>
-    </div>
+        <div class="right">
+            <button class="theme_switch" id="theme-toggle"></button>
+        </div>
+    </nav>
 
     <script is:inline>
         const button = document.getElementById("theme-toggle");
+        const root = document.documentElement;
 
-        function switchTheme() {
-            const root = document.documentElement;
-            const newTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        function setTheme(theme) {
+            root.dataset.theme = theme;
+            localStorage.setItem("theme", theme);
 
-            root.dataset.theme = newTheme;
-            localStorage.setItem("theme", newTheme);
+            button.textContent = theme === "dark" ? "Light" : "Dark";
         }
 
-        button.addEventListener("click", switchTheme);
+        function toggleTheme() {
+            const newTheme = root.dataset.theme === "dark" ? "light" : "dark";
+            setTheme(newTheme);
+        }
+
+        const savedTheme = localStorage.getItem("theme") || "light";
+        setTheme(savedTheme);
+
+        button.addEventListener("click", toggleTheme);
     </script>
 </header>
+
+
+<style>
+    header {
+        width: 100%;
+        background-color: var(--surface);
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        max-width: var(--max-width);
+        width: 100%;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        flex: 1;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex: 0 0 auto;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+    }
+
+    .theme_switch{
+        background: none;
+        border: none;
+        color: var(--text);
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .theme_switch:hover{
+        color: var(--button-hover);
+    }
+
+</style>

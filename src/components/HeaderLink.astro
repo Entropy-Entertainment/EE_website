@@ -16,18 +16,19 @@ const isActive = current === target || (current === '' && target === '');
 
 <style>
     .nav-link {
-        color: var(--color-text);
         text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
         position: relative;
         padding: 0.5rem 0;
         transition: color 0.3s ease;
         background: transparent;
     }
 
+    .nav-link.active {
+        color: var(--button);
+    }
+
     .nav-link:hover {
-        color: var(--color-primary);
+        color: var(--button-hover);
     }
 
     .nav-link::after {
@@ -37,21 +38,11 @@ const isActive = current === target || (current === '' && target === '');
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--color-primary);
+        background: var(--button-pressed);
         transition: width 0.3s ease;
     }
 
     .nav-link:hover::after {
         width: 100%;
-    }
-
-    .nav-link.active {
-        color: var(--color-primary);
-    }
-
-    @media (max-width: 768px) {
-        .nav-link {
-            font-size: 0.9rem;
-        }
     }
 </style>
